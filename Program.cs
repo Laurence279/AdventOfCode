@@ -23,7 +23,8 @@
 
         private static string GetResult(int day)
         {
-            return string.Empty;
+            var day1 = new Day1();
+            return day1.Result;
         }
 
         private static void PrintIntro(int day)
