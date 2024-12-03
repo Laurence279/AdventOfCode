@@ -1,4 +1,7 @@
-﻿namespace AdventOfCode.CLI
+﻿using System.Runtime.CompilerServices;
+using AdventOfCode.CLI.Days;
+
+namespace AdventOfCode.CLI
 {
     internal class Program
     {
@@ -21,10 +24,11 @@
             Console.WriteLine("Result is: {0}", result);
         }
 
-        private static string GetResult(int day)
+        private static string GetResult(int d)
         {
-            var day2 = new Day2();
-            return day2.Result;
+            var registry = new DayRegistry();
+            var day = registry.GetDay(d);
+            return day.Solve();
         }
 
         private static void PrintIntro(int day)

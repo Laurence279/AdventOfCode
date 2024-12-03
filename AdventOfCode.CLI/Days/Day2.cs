@@ -5,16 +5,9 @@ using System.Text;
 
 namespace AdventOfCode.CLI
 {
-    public class Day2
+    public class Day2 : Puzzle
     {
         private List<List<int>> listNums = new List<List<int>>();
-
-        public Day2()
-        {
-            this.Result = this.Solve();
-        }
-
-        public string Result { get; set; }
 
         public static bool IsSafe(List<int> list, bool useDampener = false)
         {
@@ -63,14 +56,7 @@ namespace AdventOfCode.CLI
             return safe;
         }
 
-        private string Solve()
-        {
-            var silver = this.Silver();
-            var gold = this.Gold();
-            return string.Format("Silver: {0}, Gold: {1}", silver, gold);
-        }
-
-        private string Silver()
+        public override string Silver()
         {
             this.PopulateLists();
 
@@ -88,30 +74,7 @@ namespace AdventOfCode.CLI
             return safeListCount.ToString();
         }
 
-/*        private static bool IsSafe(string input, bool dampener)
-        {
-            if (IsSafe(input))
-            {
-                return true;
-            }
-            // Remove each level in turn until we get safe or run out
-            if (dampener)
-            {
-                var numbers = input.Split(" ").Select(int.Parse).ToArray();
-                for (var i = 0; i < input.Length; i++)
-                {
-                    var newInput = string.Join(" ", numbers.Where((_, j) => j != i).ToArray());
-                    if (IsSafe(newInput))
-                    {
-                        return true;
-                    }
-                }
-            }
-
-            return false;
-        }*/
-
-        private string Gold()
+        public override string Gold()
         {
             this.PopulateLists();
 

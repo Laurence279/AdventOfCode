@@ -6,27 +6,13 @@ using System.Threading.Tasks;
 
 namespace AdventOfCode.CLI
 {
-    public class Day1
+    public class Day1 : Puzzle
     {
         private List<int> list1 = new List<int>();
         private List<int> list2 = new List<int>();
         private Dictionary<int, int> dict = new Dictionary<int, int>();
 
-        public Day1()
-        {
-            this.Result = this.Solve();
-        }
-        
-        public string Result { get; set; }
-
-        private string Solve()
-        {
-            var silver = this.Silver();
-            var gold = this.Gold();
-            return string.Format("Silver: {0}, Gold: {1}", silver, gold);
-        }
-
-        private string Silver()
+        public override string Silver()
         {
             this.PopulateLists();
 
@@ -43,7 +29,7 @@ namespace AdventOfCode.CLI
             return result.ToString();
         }
 
-        private string Gold()
+        public override string Gold()
         {
             foreach (var number in this.list2) {
                 if (this.dict.ContainsKey(number))
@@ -71,7 +57,6 @@ namespace AdventOfCode.CLI
                 this.dict[int.Parse(numbers[0])] = 0;
                 this.list2.Add(int.Parse(numbers[1]));
             }
-
         }
     }
 }
