@@ -23,8 +23,8 @@
 
         private static string GetResult(int day)
         {
-            var day1 = new Day1();
-            return day1.Result;
+            var day2 = new Day2();
+            return day2.Result;
         }
 
         private static void PrintIntro(int day)

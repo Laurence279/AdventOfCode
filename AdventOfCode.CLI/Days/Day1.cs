@@ -62,7 +62,7 @@ namespace AdventOfCode.CLI
 
         private void PopulateLists()
         {
-            var text = File.ReadAllLines("./day1.txt");
+            var text = File.ReadAllLines("./Days/day1.txt");
 
             foreach (var line in text)
             {

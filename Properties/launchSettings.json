@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "AdventOfCode.CLI": {
-      "commandName": "Project",
-      "commandLineArgs": "1"
-    }
-  }
-}
