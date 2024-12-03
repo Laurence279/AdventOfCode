@@ -1,5 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-using AdventOfCode.CLI.Days;
+﻿using AdventOfCode.CLI.Days;
 
 namespace AdventOfCode.CLI
 {

@@ -12,10 +12,13 @@ namespace AdventOfCode.CLI
         private List<int> list2 = new List<int>();
         private Dictionary<int, int> dict = new Dictionary<int, int>();
 
+        public Day1(string input)
+        {
+            this.Setup(input);
+        }
+
         public override string Silver()
         {
-            this.PopulateLists();
-
             list1.Sort();
             list2.Sort();
 
@@ -46,11 +49,10 @@ namespace AdventOfCode.CLI
             return result.ToString();
         }
 
-        private void PopulateLists()
+        private void Setup(string input)
         {
-            var text = File.ReadAllLines("./Days/day1.txt");
-
-            foreach (var line in text)
+            var lines = input.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+            foreach (var line in lines)
             {
                 var numbers = line.Split("   ");
                 this.list1.Add(int.Parse(numbers[0]));

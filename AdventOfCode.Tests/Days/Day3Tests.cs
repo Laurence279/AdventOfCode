@@ -17,7 +17,7 @@ namespace AdventOfCode.Tests
                 (91, 478),
                 (105, 40)
             };
-            var instance = new Day3();
+            var instance = new Day3(input);
 
             var result = instance.GetMultiplyInstructions(input);
 
@@ -28,7 +28,7 @@ namespace AdventOfCode.Tests
         public void SplitOnDoOrDont_ValidInput_ReturnsStringArrayIncludingDosAndDonts()
         {
             var input = "asjdasij342do()234das234ipdon't()2dpoas";
-            var instance = new Day3();
+            var instance = new Day3(input);
             var expected = new[]
             {
                 "do()",
@@ -44,7 +44,7 @@ namespace AdventOfCode.Tests
         public void SplitOnDoOrDont_ValidInput_DoesNotIncludeAnyDosOrDontsInsideSubstrings()
         {
             var input = "asjdasij342do()234ddo*(dodoodo()()Do()do()dont()dont()2dodont()dodasj30asdont()doas2i9don't()dla234ipdon't()2dpoas";
-            var instance = new Day3();
+            var instance = new Day3(input);
 
             var result = instance.SplitOnDoOrDont(input);
 

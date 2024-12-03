@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -9,10 +10,15 @@ namespace AdventOfCode.CLI.Days
 {
     public class Day3 : Puzzle
     {
+        private readonly string input;
+        public Day3(string input)
+        {
+            this.input = input;
+        }
+
         public override string Gold()
         {
-            var text = File.ReadAllText("./Days/day3.txt");
-            var splitString = this.SplitOnDoOrDont(text);
+            var splitString = this.SplitOnDoOrDont(this.input);
             var enabled = true;
             var sum = 0;
 
@@ -39,8 +45,7 @@ namespace AdventOfCode.CLI.Days
 
         public override string Silver()
         {
-            var text = File.ReadAllText("./Days/day3.txt");
-            var instructions = this.GetMultiplyInstructions(text);
+            var instructions = this.GetMultiplyInstructions(this.input);
             var sum = 0;
             foreach (var (n1, n2) in instructions)
             {

@@ -9,6 +9,11 @@ namespace AdventOfCode.CLI
     {
         private List<List<int>> listNums = new List<List<int>>();
 
+        public Day2(string input)
+        {
+            this.Setup(input);
+        }
+
         public static bool IsSafe(List<int> list, bool useDampener = false)
         {
             var safe = true;
@@ -58,13 +63,10 @@ namespace AdventOfCode.CLI
 
         public override string Silver()
         {
-            this.PopulateLists();
-
             var safeListCount = 0;
             foreach (var list in listNums)
             {
                 var safe = IsSafe(list);
-                Console.WriteLine($"{string.Join(",", list)} - {safe}");
                 if (safe)
                 {
                     safeListCount++;
@@ -76,13 +78,10 @@ namespace AdventOfCode.CLI
 
         public override string Gold()
         {
-            this.PopulateLists();
-
             var safeListCount = 0;
             foreach (var list in listNums)
             {
                 var safe = IsSafe(list, true);
-                Console.WriteLine($"{string.Join(",", list)} - {safe}");
                 if (safe)
                 {
                     safeListCount++;
@@ -92,12 +91,11 @@ namespace AdventOfCode.CLI
             return safeListCount.ToString();
         }
 
-        private void PopulateLists()
+        private void Setup(string input)
         {
-            this.listNums = new();
-            var text = File.ReadAllLines("./Days/day2.txt");
+            var lines = input.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
 
-            foreach (var line in text)
+            foreach (var line in lines)
             {
                 var numbers = line.Split(" ").Select(int.Parse).ToList();
                 this.listNums.Add(numbers);
