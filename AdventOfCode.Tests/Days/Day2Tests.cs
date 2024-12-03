@@ -6,7 +6,7 @@ namespace AdventOfCode.Tests
     public class Day2Tests
     {
         [Test]
-        public void UsingDampener_ValidSequence_ReturnsTrue()
+        public void IsSafe_DampenerWithValidSequence_ReturnsTrue()
         {
             var input = new List<int> { 1, 3, 5, 1, 7, 10 };
             var result = Day2.IsSafe(input, true);
@@ -14,7 +14,7 @@ namespace AdventOfCode.Tests
         }
 
         [Test]
-        public void UsingDampener_ValidSequenceWhenFirstNumRemoved_ReturnsTrue()
+        public void IsSafe_DampenerWithValidSequenceWhenFirstNumRemoved_ReturnsTrue()
         {
             var input = new List<int> { 91, 87, 86, 83, 81, 80, 79, 78 };
             var result = Day2.IsSafe(input, true);
@@ -22,7 +22,7 @@ namespace AdventOfCode.Tests
         }
 
         [Test]
-        public void UsingDampener_InvalidSequence_ReturnsFalse()
+        public void IsSafe_DampenerWithInvalidSequence_ReturnsFalse()
         {
             var input = new List<int> { 1, 3, 10, 2, 5, 1 };
             var result = Day2.IsSafe(input, true);
