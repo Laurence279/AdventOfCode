@@ -16,7 +16,8 @@
             {
                 { 1, typeof(Day1) },
                 { 2, typeof(Day2) },
-                { 3, typeof(Day3) }
+                { 3, typeof(Day3) },
+                { 4, typeof(Day4) }
             };
 
             foreach (var day in days)
